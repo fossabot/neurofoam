@@ -1,0 +1,26 @@
+{
+  "name": "neurofoam",
+  "description": "This is a stub package.  You probably want a @neurofoam/* package instead.",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "engineStrict": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "files": [
+    "**/*.js",
+    "**/*.d.ts",
+    "!**/*-tests.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameswilddev/neurofoam"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "echo This is a stub package.  You probably want a @neurofoam/* package instead."
+  }
+}

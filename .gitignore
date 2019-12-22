@@ -1,0 +1,14 @@
+/.nyc_output
+/node_modules
+/@neurofoam/*/license
+/@neurofoam/*/node_modules
+/neurofoam/license
+/neurofoam/node_modules
+@neurofoam/**/*.js
+@neurofoam/**/*.d.ts
+neurofoam/**/*.js
+neurofoam/**/*.d.ts
+build/**/*.js
+build/**/*.d.ts
+publish/**/*.js
+publish/**/*.d.ts

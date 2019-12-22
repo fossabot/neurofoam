@@ -1,0 +1,26 @@
+matrix:
+  include:
+    - os: linux
+      language: node_js
+      node_js:
+        - 12
+      env:
+        - NEUROFOAM_CI=true
+      deploy:
+        - provider: script
+          script: echo $NPM_AUTH > ~/.npmrc && node publish
+          skip_cleanup: true
+          on:
+            branch: master
+    - os: windows
+      language: node_js
+      node_js:
+        - 12
+      env:
+        - NEUROFOAM_CI=true
+    - os: osx
+      language: node_js
+      node_js:
+        - 12
+      env:
+        - NEUROFOAM_CI=true

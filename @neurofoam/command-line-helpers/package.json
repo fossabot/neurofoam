@@ -1,0 +1,24 @@
+{
+  "name": "@neurofoam/command-line-helpers",
+  "description": "Shared helpers for creating command-line executables.",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "engineStrict": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "files": [
+    "**/*.js",
+    "**/*.d.ts",
+    "!**/*-tests.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameswilddev/neurofoam"
+  },
+  "license": "MIT",
+  "types": "index.d.ts"
+}
