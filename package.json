@@ -17,7 +17,7 @@
     "del-cli": "3.0.0",
     "jasmine": "3.5.0",
     "nyc": "14.1.1",
-    "typescript": "3.7.2"
+    "typescript": "3.7.4"
   },
   "scripts": {
     "test": "del-cli '**/*.js' '**/*.d.ts' '!**/node_modules/**/*' && tsc --project tools.tsconfig.json && node build && tsc --project packages.tsconfig.json && nyc --check-coverage --all --exclude \"**/*-tests.*\" --exclude \"build/**/*\" --exclude \"publish/**/*\" --lines 100 --functions 100 --branches 100 --statements 100 jasmine --config=jasmine.json"
