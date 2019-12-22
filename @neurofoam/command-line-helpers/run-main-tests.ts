@@ -1,6 +1,6 @@
 import { runMain } from "./index"
 
-describe(`@neurofoam/build-tool-helpers`, () => {
+describe(`@neurofoam/command-line-helpers`, () => {
   describe(`runMain`, () => {
     function withFakedGlobals(
       description: string,
