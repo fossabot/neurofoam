@@ -17,6 +17,12 @@ If the root is contacted, a 307 response is used to redirect it to a new
 "bubble",
 e.g. `POST {Neurofoam host}` -> `POST {Neurofoam host}/{new bubble key}`
 
+The HTTP method must be "POST".  If it is not, HTTP status code 405 is returned
+with no further action taken.
+
+The "bubble" key must be a valid UUID.  If it is not, HTTP status code 404 is
+returned with no further action taken.
+
 The request body must be valid JSON; if it is not, HTTP status code 400 is
 returned with no further action taken.
 
