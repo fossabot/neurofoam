@@ -6,9 +6,9 @@ Types used by Neurofoam applications and hosts.
 
 This package has the following runtime dependencies:
 
-Name       | Version                                                                                           
----------- | --------------------------------------------------------------------------------------------------
-jsonschema | [![^1.2.5](https://img.shields.io/npm/v/jsonschema.svg)](https://www.npmjs.com/package/jsonschema)
+Name       | Version                                                                                          
+---------- | -------------------------------------------------------------------------------------------------
+jsonschema | [![1.2.5](https://img.shields.io/npm/v/jsonschema.svg)](https://www.npmjs.com/package/jsonschema)
 
 ## License
 
