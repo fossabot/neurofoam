@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
   "exclude": [
     "build",
-    "publish",
-    "test-data"
+    "publish"
   ]
 }
