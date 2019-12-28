@@ -51,11 +51,10 @@ was generated, it is returned in the Authorization header.
 
 ## NPM packages
 
-Name                                                               | Version                                                                                                                                     | Description                                                               
+Name                                                               | Version                                                                                                                                     | Description
 ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------
-[@neurofoam/command-line-helpers](@neurofoam/command-line-helpers) | [![0.0.1](https://img.shields.io/npm/v/@neurofoam/command-line-helpers.svg)](https://www.npmjs.com/package/@neurofoam/command-line-helpers) | Shared helpers for creating command-line executables.                     
-[@neurofoam/host](@neurofoam/host)                                 | [![0.0.0](https://img.shields.io/npm/v/@neurofoam/host.svg)](https://www.npmjs.com/package/@neurofoam/host)                                 | Hosts a Neurofoam application locally for development purposes.           
-[@neurofoam/types](@neurofoam/types)                               | [![0.0.0](https://img.shields.io/npm/v/@neurofoam/types.svg)](https://www.npmjs.com/package/@neurofoam/types)                               | Types used by Neurofoam applications and hosts.                           
+[@neurofoam/command-line-helpers](@neurofoam/command-line-helpers) | [![0.0.1](https://img.shields.io/npm/v/@neurofoam/command-line-helpers.svg)](https://www.npmjs.com/package/@neurofoam/command-line-helpers) | Shared helpers for creating command-line executables.
+[@neurofoam/types](@neurofoam/types)                               | [![0.0.0](https://img.shields.io/npm/v/@neurofoam/types.svg)](https://www.npmjs.com/package/@neurofoam/types)                               | Types used by Neurofoam applications and hosts.
 [neurofoam](neurofoam)                                             | [![0.0.0](https://img.shields.io/npm/v/neurofoam.svg)](https://www.npmjs.com/package/neurofoam)                                             | This is a stub package.  You probably want a @neurofoam/* package instead.
 
 ## License
