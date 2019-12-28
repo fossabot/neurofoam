@@ -23,7 +23,7 @@ The request body must be valid JSON; if it is not, HTTP status code 400 is
 returned with no further action taken.
 
 If the Authorization header is present, it must be a valid UUID.  If it is not,
-HTTP status code 401 is returned.
+HTTP status code 401 is returned with no further action taken.
 
 Next, the request body JSON is validated against the application's request JSON
 schema.  If it is not valid, HTTP status code 422 is returned with no further
