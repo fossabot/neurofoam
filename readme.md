@@ -12,39 +12,41 @@ real-world problems.
 
 ## Request pipeline
 
-Each "bubble" may be interacted with through its path,
-e.g. `POST {Neurofoam host}/{bubble key}`.
+Where a `uuid` is of the form
+`^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$`:
 
-The HTTP method must be "POST".  If it is not, HTTP status code 405 is returned
-with no further action taken.
+The request must be of the form `POST {Neurofoam host}/{bubble uuid}`.
 
-The "bubble" key must be a valid UUID.  If it is not, HTTP status code 404 is
-returned with no further action taken.
+If the path is not as above, HTTP status code 404 is returned with no further
+action taken.
+
+If the HTTP method is not `POST`, HTTP status code 405 is returned with no
+further action taken.
 
 The request body must be valid JSON; if it is not, HTTP status code 400 is
 returned with no further action taken.
 
-If the Authorization header is present, it must be a valid UUID.  If it is not,
-HTTP status code 401 is returned with no further action taken.
+If the Authorization header is present, it must be of the form `BEARER {uuid}`.
+If it is not, HTTP status code 401 is returned with no further action taken.
 
 Next, the request body JSON is validated against the application's request JSON
 schema.  If it is not valid, HTTP status code 422 is returned with no further
 action taken.
 
 The request callback is then executed.  This is given the "bubble"'s state JSON,
-the session key (or a new, randomly generated session key if the Authorization
-header is absent), and the request body JSON.  It then returns an object
-containing the response status code, optional JSON body, and optionally, event
-JSON.
+the session `uuid` (or a new, randomly generated session `uuid` if the
+Authorization header is absent), and the request body JSON.  It then returns an
+object containing the response status code, optional JSON body, and optional
+event JSON.
 
 If event JSON is emitted, the event applicator callback is executed, given the
 "bubble"'s current state JSON and the event JSON.  It returns the new state to
 use.  This is persisted, subject to optimistic concurrency control; if the
 persisted "bubble" state has changed, the request pipeline is rewound to the
-request callback using the new "bubble" state JSON and the same sesison key and
-request body JSON as before.
+request callback using the new "bubble" state JSON and the same sesison `uuid`
+and request body JSON as before.
 
-Afterward, the response body is returned to the client.  If a new session key
+Afterward, the response body is returned to the client.  If a new session `uuid`
 was generated, it is returned in the Authorization header.
 
 ## NPM packages
@@ -52,6 +54,7 @@ was generated, it is returned in the Authorization header.
 Name                                                               | Version                                                                                                                                     | Description                                                               
 ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------
 [@neurofoam/command-line-helpers](@neurofoam/command-line-helpers) | [![0.0.1](https://img.shields.io/npm/v/@neurofoam/command-line-helpers.svg)](https://www.npmjs.com/package/@neurofoam/command-line-helpers) | Shared helpers for creating command-line executables.                     
+[@neurofoam/host](@neurofoam/host)                                 | [![0.0.0](https://img.shields.io/npm/v/@neurofoam/host.svg)](https://www.npmjs.com/package/@neurofoam/host)                                 | Hosts a Neurofoam application locally for development purposes.           
 [@neurofoam/types](@neurofoam/types)                               | [![0.0.0](https://img.shields.io/npm/v/@neurofoam/types.svg)](https://www.npmjs.com/package/@neurofoam/types)                               | Types used by Neurofoam applications and hosts.                           
 [neurofoam](neurofoam)                                             | [![0.0.0](https://img.shields.io/npm/v/neurofoam.svg)](https://www.npmjs.com/package/neurofoam)                                             | This is a stub package.  You probably want a @neurofoam/* package instead.
 
