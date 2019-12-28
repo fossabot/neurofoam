@@ -26,6 +26,10 @@ further action taken.
 If the Authorization header is present, it must be of the form `BEARER {uuid}`.
 If it is not, HTTP status code 401 is returned with no further action taken.
 
+The request body cannot be longer than the request length limit specified by the
+application; if it is, HTTP status code 413 is returned with no further action
+taken.
+
 The request body must be valid JSON; if it is not, HTTP status code 400 is
 returned with no further action taken.
 

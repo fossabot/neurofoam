@@ -9,6 +9,8 @@ type Application<
   > = {
     readonly initialState: TState
 
+    readonly requestLengthLimit: number
+
     readonly requestSchema: jsonschema.Schema
 
     requestCallback(
